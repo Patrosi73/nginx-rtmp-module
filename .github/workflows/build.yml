@@ -85,12 +85,15 @@ jobs:
         name: Install PERL
         with:
           distribution: strawberry
+      - name: Setup Chocolatey
+        uses: crazy-max/ghaction-chocolatey@v3.2.0
+        with:
+            args: install wget unzip zip
       - name: Prepare build environment
         shell: bash
         run: |
           cd ~
           rm /usr/bin/perl.exe /usr/bin/link.exe
-          chocolatey install wget unzip zip
           hg clone http://hg.nginx.org/nginx
           mv $GITHUB_WORKSPACE/openssl ~
           mv $GITHUB_WORKSPACE/nginx-rtmp-module ~
