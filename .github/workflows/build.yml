@@ -58,7 +58,7 @@ jobs:
          cd ~/nginx/build
          tar -czf nginx-with-rtmp-linux.tar.gz *
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
          name: build-linux
          path: /home/runner/nginx/build/nginx-with-rtmp-linux.tar.gz
@@ -128,7 +128,7 @@ jobs:
          cd ~/nginx/build
          zip -r nginx-with-rtmp-win32.zip *
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
          name: build-win32
          path: C:\Users\runneradmin\nginx\build\nginx-with-rtmp-win32.zip
